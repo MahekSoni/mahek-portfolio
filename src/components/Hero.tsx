@@ -1,5 +1,6 @@
 
 import { Button } from '@/components/ui/button';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { ArrowDown, Sparkles, Code, Palette } from 'lucide-react';
 
 const Hero = () => {
@@ -45,11 +46,18 @@ const Hero = () => {
             </div>
 
             {/* Enhanced Profile Image */}
-            <div className="w-52 h-52 mx-auto rounded-full bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-lg border border-white/20 flex items-center justify-center shadow-2xl relative group">
+            <div className="w-52 h-52 mx-auto rounded-full bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-lg border border-white/20 flex items-center justify-center shadow-2xl relative group p-1">
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-400/20 to-pink-400/20 animate-pulse"></div>
-              <div className="w-44 h-44 rounded-full bg-gradient-to-br from-purple-400 via-pink-400 to-cyan-400 flex items-center justify-center text-white text-6xl font-bold shadow-inner relative z-10 group-hover:scale-105 transition-transform duration-300">
-                MS
-              </div>
+              <Avatar className="w-44 h-44 relative z-10 group-hover:scale-105 transition-transform duration-300">
+                <AvatarImage 
+                  src="https://i.postimg.cc/X7PVk8JV/mahek.jpg" 
+                  alt="Mahek Soni"
+                  className="object-cover"
+                />
+                <AvatarFallback className="w-44 h-44 bg-gradient-to-br from-purple-400 via-pink-400 to-cyan-400 text-white text-6xl font-bold">
+                  MS
+                </AvatarFallback>
+              </Avatar>
             </div>
           </div>
 
