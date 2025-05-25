@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -6,18 +5,17 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Mail, Phone, Send, MapPin, Clock } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: "Please fill in all fields",
@@ -26,24 +24,23 @@ const Contact = () => {
       });
       return;
     }
-
     toast({
       title: "Message sent successfully!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
+      description: "Thank you for reaching out. I'll get back to you soon."
     });
-    
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({
+      name: '',
+      email: '',
+      message: ''
+    });
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value
     }));
   };
-
-  return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 via-white to-purple-50 relative overflow-hidden">
+  return <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 via-white to-purple-50 relative overflow-hidden bg-purple-300">
       {/* Background decorative elements */}
       <div className="absolute top-10 left-10 w-40 h-40 bg-gradient-to-r from-purple-200/20 to-blue-200/20 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 right-10 w-32 h-32 bg-gradient-to-r from-pink-200/20 to-cyan-200/20 rounded-full blur-3xl"></div>
@@ -79,10 +76,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800">Email</h4>
-                    <a 
-                      href="mailto:mahek200521@gmail.com"
-                      className="text-purple-600 hover:text-purple-700 transition-colors font-medium"
-                    >
+                    <a href="mailto:mahek200521@gmail.com" className="text-purple-600 hover:text-purple-700 transition-colors font-medium">
                       mahek200521@gmail.com
                     </a>
                   </div>
@@ -96,10 +90,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800">Phone</h4>
-                    <a 
-                      href="tel:7211120207"
-                      className="text-purple-600 hover:text-purple-700 transition-colors font-medium"
-                    >
+                    <a href="tel:7211120207" className="text-purple-600 hover:text-purple-700 transition-colors font-medium">
                       7211120207
                     </a>
                   </div>
@@ -147,51 +138,24 @@ const Contact = () => {
                 <Label htmlFor="name" className="text-gray-700 font-medium mb-2 block">
                   Your Name
                 </Label>
-                <Input
-                  id="name"
-                  name="name"
-                  type="text"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="border-gray-300 focus:border-purple-500 focus:ring-purple-500 rounded-xl"
-                  placeholder="Enter your full name"
-                />
+                <Input id="name" name="name" type="text" value={formData.name} onChange={handleChange} className="border-gray-300 focus:border-purple-500 focus:ring-purple-500 rounded-xl" placeholder="Enter your full name" />
               </div>
 
               <div>
                 <Label htmlFor="email" className="text-gray-700 font-medium mb-2 block">
                   Email Address
                 </Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="border-gray-300 focus:border-purple-500 focus:ring-purple-500 rounded-xl"
-                  placeholder="Enter your email address"
-                />
+                <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} className="border-gray-300 focus:border-purple-500 focus:ring-purple-500 rounded-xl" placeholder="Enter your email address" />
               </div>
 
               <div>
                 <Label htmlFor="message" className="text-gray-700 font-medium mb-2 block">
                   Message
                 </Label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 resize-none"
-                  placeholder="Tell me about your project or just say hello!"
-                />
+                <textarea id="message" name="message" rows={5} value={formData.message} onChange={handleChange} className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 resize-none" placeholder="Tell me about your project or just say hello!" />
               </div>
 
-              <Button 
-                type="submit"
-                className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
-              >
+              <Button type="submit" className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold py-4 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
                 <span className="flex items-center justify-center gap-2">
                   Send Message
                   <Send className="w-4 h-4" />
@@ -201,8 +165,6 @@ const Contact = () => {
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;

@@ -1,16 +1,13 @@
-
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Code, Palette, GraduationCap, Heart } from 'lucide-react';
-
 const About = () => {
-  return (
-    <section id="about" className="py-20 bg-gradient-to-br from-gray-50 via-white to-purple-50 relative overflow-hidden">
+  return <section id="about" className="py-20 bg-gradient-to-br from-gray-50 via-white to-purple-50 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-20 right-10 w-32 h-32 bg-gradient-to-r from-purple-200/30 to-blue-200/30 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 left-10 w-40 h-40 bg-gradient-to-r from-pink-200/20 to-cyan-200/20 rounded-full blur-3xl"></div>
       
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-10 bg-purple-300">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent mb-6">
             About Me
@@ -39,25 +36,18 @@ const About = () => {
 
             {/* Skills highlights */}
             <div className="flex flex-wrap gap-3 pt-6">
-              {["Python", "Java", "UI/UX", "Teaching", "Django"].map((skill) => (
-                <span 
-                  key={skill}
-                  className="px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 rounded-full text-sm font-medium border border-purple-200 hover:scale-105 transition-transform duration-200"
-                >
+              {["Python", "Java", "UI/UX", "Teaching", "Django"].map(skill => <span key={skill} className="px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 rounded-full text-sm font-medium border border-purple-200 hover:scale-105 transition-transform duration-200">
                   {skill}
-                </span>
-              ))}
+                </span>)}
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-6">
               <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
                 Download Resume
               </Button>
-              <Button 
-                variant="outline" 
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border-2 border-purple-300 text-purple-600 hover:bg-purple-600 hover:text-white font-semibold px-8 py-3 rounded-2xl transition-all duration-300"
-              >
+              <Button variant="outline" onClick={() => document.getElementById('contact')?.scrollIntoView({
+              behavior: 'smooth'
+            })} className="border-2 border-purple-300 text-purple-600 hover:bg-purple-600 hover:text-white font-semibold px-8 py-3 rounded-2xl transition-all duration-300">
                 Let&apos;s Connect
               </Button>
             </div>
@@ -121,8 +111,6 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;

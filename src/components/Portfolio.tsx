@@ -1,11 +1,8 @@
-
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Sparkles, Rocket, Heart, ArrowRight } from 'lucide-react';
-
 const Portfolio = () => {
-  return (
-    <section id="portfolio" className="py-20 bg-white relative overflow-hidden">
+  return <section id="portfolio" className="py-20 relative overflow-hidden bg-violet-300">
       {/* Background decorative elements */}
       <div className="absolute top-10 right-20 w-32 h-32 bg-gradient-to-r from-purple-200/20 to-pink-200/20 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 left-20 w-40 h-40 bg-gradient-to-r from-blue-200/20 to-cyan-200/20 rounded-full blur-3xl"></div>
@@ -51,16 +48,21 @@ const Portfolio = () => {
 
           {/* Future Projects Preview */}
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { name: "UI/UX Project", icon: "🎨", color: "from-purple-400 to-pink-400" },
-              { name: "Web Application", icon: "💻", color: "from-blue-400 to-cyan-400" },
-              { name: "Mobile App Design", icon: "📱", color: "from-green-400 to-teal-400" }
-            ].map((project, index) => (
-              <Card 
-                key={project.name}
-                className="p-6 bg-white/60 backdrop-blur-sm border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group relative overflow-hidden"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
+            {[{
+            name: "UI/UX Project",
+            icon: "🎨",
+            color: "from-purple-400 to-pink-400"
+          }, {
+            name: "Web Application",
+            icon: "💻",
+            color: "from-blue-400 to-cyan-400"
+          }, {
+            name: "Mobile App Design",
+            icon: "📱",
+            color: "from-green-400 to-teal-400"
+          }].map((project, index) => <Card key={project.name} className="p-6 bg-white/60 backdrop-blur-sm border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group relative overflow-hidden" style={{
+            animationDelay: `${index * 0.1}s`
+          }}>
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
                   <div className={`w-full h-32 bg-gradient-to-br ${project.color} rounded-lg mb-4 flex items-center justify-center text-4xl shadow-lg group-hover:scale-105 transition-transform duration-300`}>
@@ -69,8 +71,7 @@ const Portfolio = () => {
                   <h4 className="font-semibold text-gray-700 mb-2">{project.name}</h4>
                   <p className="text-sm text-gray-500">In Development</p>
                 </div>
-              </Card>
-            ))}
+              </Card>)}
           </div>
 
           {/* Collaboration Invitation */}
@@ -90,10 +91,9 @@ const Portfolio = () => {
                 <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
                   I&apos;m always open to new opportunities, internships, and collaborative projects. Let&apos;s create something amazing together and make a positive impact!
                 </p>
-                <Button 
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-2xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
-                >
+                <Button onClick={() => document.getElementById('contact')?.scrollIntoView({
+                behavior: 'smooth'
+              })} className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-2xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
                   <span className="flex items-center gap-2">
                     Get In Touch
                     <ArrowRight className="w-4 h-4" />
@@ -104,8 +104,6 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Portfolio;
