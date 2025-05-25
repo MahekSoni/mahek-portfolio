@@ -40,12 +40,12 @@ const Contact = () => {
       [e.target.name]: e.target.value
     }));
   };
-  return <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 via-white to-purple-50 relative overflow-hidden bg-purple-300">
+  return <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 via-white to-purple-50 relative overflow-hidden bg-fuchsia-300">
       {/* Background decorative elements */}
       <div className="absolute top-10 left-10 w-40 h-40 bg-gradient-to-r from-purple-200/20 to-blue-200/20 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 right-10 w-32 h-32 bg-gradient-to-r from-pink-200/20 to-cyan-200/20 rounded-full blur-3xl"></div>
       
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-10 bg-purple-300">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent mb-6">
             Get In Touch
