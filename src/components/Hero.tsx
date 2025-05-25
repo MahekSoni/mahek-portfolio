@@ -13,12 +13,14 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800">
         {/* Animated geometric shapes */}
         <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-xl animate-float"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-r from-pink-400/30 to-purple-500/30 rounded-lg rotate-45 animate-float delay-1000 blur-sm"></div>
-        <div className="absolute bottom-32 left-1/4 w-16 h-16 bg-gradient-to-r from-yellow-400/25 to-orange-500/25 rounded-full animate-float delay-2000 blur-lg"></div>
-        <div className="absolute bottom-20 right-1/3 w-40 h-20 bg-gradient-to-r from-green-400/20 to-teal-500/20 rounded-full animate-float delay-500 blur-xl"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-r from-pink-400/30 to-purple-500/30 rounded-lg rotate-45 animate-float blur-sm" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-32 left-1/4 w-16 h-16 bg-gradient-to-r from-yellow-400/25 to-orange-500/25 rounded-full animate-float blur-lg" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-20 right-1/3 w-40 h-20 bg-gradient-to-r from-green-400/20 to-teal-500/20 rounded-full animate-float blur-xl" style={{ animationDelay: '0.5s' }}></div>
         
-        {/* Grid pattern overlay */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.03\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+        {/* Simplified grid pattern overlay */}
+        <div className="absolute inset-0 opacity-30" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+        }}></div>
       </div>
 
       <div className="container mx-auto px-6 text-center relative z-10">
@@ -31,12 +33,12 @@ const Hero = () => {
                 <Code className="w-8 h-8 text-cyan-400" />
               </div>
             </div>
-            <div className="absolute -top-4 -right-8 animate-float delay-1000">
+            <div className="absolute -top-4 -right-8 animate-float" style={{ animationDelay: '1s' }}>
               <div className="w-14 h-14 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
                 <Palette className="w-7 h-7 text-pink-400" />
               </div>
             </div>
-            <div className="absolute -bottom-4 -left-4 animate-float delay-2000">
+            <div className="absolute -bottom-4 -left-4 animate-float" style={{ animationDelay: '2s' }}>
               <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
                 <Sparkles className="w-6 h-6 text-yellow-400" />
               </div>
@@ -54,7 +56,7 @@ const Hero = () => {
           {/* Enhanced Typography */}
           <div className="space-y-6">
             <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 leading-tight">
-              Hello, I'm <br />
+              Hello, I&apos;m <br />
               <span className="bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-400 bg-clip-text text-transparent animate-pulse">
                 Mahek
               </span>
