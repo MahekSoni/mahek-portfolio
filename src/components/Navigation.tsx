@@ -45,7 +45,7 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            {navItems.map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className="transition-colors duration-300 font-medium text-gray-50">
+            {navItems.map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className="transition-colors duration-300 font-medium text-black-50\n">
                 {item.label}
               </button>)}
           </div>
