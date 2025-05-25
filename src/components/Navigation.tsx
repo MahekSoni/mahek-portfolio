@@ -37,7 +37,7 @@ const Navigation = () => {
     id: 'contact'
   }];
   return <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-6 py-4 bg-black/0">
         <div className="flex justify-between items-center">
           <div className="text-2xl font-bold gradient-text">
             Mahek Soni
@@ -45,7 +45,7 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            {navItems.map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className="transition-colors duration-300 font-medium text-gray-50">
+            {navItems.map(item => <button key={item.id} onClick={() => scrollToSection(item.id)} className="transition-colors duration-300 font-medium text-zinc-50">
                 {item.label}
               </button>)}
           </div>
